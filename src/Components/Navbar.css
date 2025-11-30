@@ -1,0 +1,106 @@
+.navigation-menu {
+  margin: 0;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.navigation-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navigation-menu ul li button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  color: white;
+  list-style: 22px;
+  transition: color 0.25s;
+}
+
+.navigation-menu ul li:not(.active):hover button {
+  text-shadow: 0 0 10px var(--sparkle-color), 0 0 20px var(--sparkle-color);
+}
+
+.navigation-menu .active-element {
+  --active-element-scale-x: 1;
+  --active-element-scale-y: 1;
+  --active-element-show: 0;
+  --active-element-opacity: 0;
+  --active-element-width: 0px;
+  --active-element-strike-x: 0%;
+  --active-element-mask-position: 0%;
+  position: absolute;
+  left: 0;
+  top: 45px;
+  height: 3px;
+  width: 40px;
+  border-radius: 2px;
+  background-color: var(--sparkle-color);
+  opacity: var(--active-element-show);
+}
+
+.navigation-menu .active-element > svg,
+.navigation-menu .active-element .strike {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: var(--active-element-opacity);
+  width: var(--active-element-width);
+  mix-blend-mode: multiply;
+}
+
+.navigation-menu .active-element > svg {
+  display: block;
+  overflow: visible;
+  height: 5px;
+  filter: blur(0.5px) drop-shadow(2px 0px 8px var(--sparkle-color-40)) drop-shadow(1px 0px 2px var(--sparkle-color-80)) drop-shadow(0px 0px 3px var(--sparkle-color-40)) drop-shadow(2px 0px 8px var(--sparkle-color-45)) drop-shadow(8px 0px 16px var(--sparkle-color-50));
+}
+
+.navigation-menu .active-element .strike {
+  padding: 24px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent calc(0% + var(--active-element-mask-position)), black calc(15% + var(--active-element-mask-position)), black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent calc(0% + var(--active-element-mask-position)), black calc(15% + var(--active-element-mask-position)), black 80%, transparent);
+}
+
+.navigation-menu .active-element .strike svg {
+  display: block;
+  overflow: visible;
+  height: 12px;
+  width: calc(var(--active-element-width) * 2);
+  transform: translate(var(--active-element-strike-x), 30%) scale(var(--active-element-scale-x), var(--active-element-scale-y));
+}
+
+.navigation-menu .active-element .strike svg:last-child {
+  transform: translate(var(--active-element-strike-x), -30%) scale(-1);
+}
+
+.navigation-menu .active-element .strike svg g path:nth-child(2) {
+  filter: blur(2px);
+}
+
+.navigation-menu .active-element .strike svg g path:nth-child(3) {
+  filter: blur(4px);
+}
+
+.navigation-menu.before .active-element {
+  transform: rotateY(180deg);
+}
