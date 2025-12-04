@@ -312,6 +312,7 @@
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 .hero-action-buttons .glow-on-hover:before {
@@ -349,7 +350,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background:rgb(63, 57, 57);
+  background:rgb(56, 52, 52);
   left: 0;
   top: 0;
   border-radius: 10px;

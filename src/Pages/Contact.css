@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Lora:wght@400;500;600&display=swap');
+
 .contact-section {
   padding: 100px 20px;
-  background: linear-gradient(135deg, rgba(10, 10, 30, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(135deg, rgba(10,10,12,0.35) 0%, rgba(8,8,12,0.75) 100%);
   min-height: 100vh;
 }
 
@@ -11,18 +13,19 @@
 }
 
 .section-title {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
-  color: #ffffff;
-  text-shadow: 0 0 20px rgba(0, 0, 255, 0.3);
+  color: #f5f5f5;
+  text-shadow: 0 0 12px rgba(255,255,255,0.03);
 }
 
 .section-divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #0000ff, transparent);
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.06), rgba(255,255,255,0.02));
   margin: 0 auto 60px;
 }
 
@@ -35,13 +38,13 @@
 
 .contact-info h3 {
   font-size: 2rem;
-  color: #ffffff;
+  color: #f5f5f5;
   margin: 0 0 15px 0;
 }
 
 .contact-info > p {
   font-size: 1.05rem;
-  color: #c0c0c0;
+  color: #cfcfcf;
   line-height: 1.8;
   margin-bottom: 40px;
 }
@@ -55,15 +58,15 @@
   gap: 15px;
   margin-bottom: 25px;
   padding: 15px;
-  background: rgba(0, 0, 255, 0.08);
-  border-left: 3px solid #0000ff;
+  background: rgba(255,255,255,0.02);
+  border-left: 3px solid rgba(255,255,255,0.06);
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .info-item:hover {
-  background: rgba(0, 0, 255, 0.15);
-  transform: translateX(5px);
+  background: rgba(255,255,255,0.03);
+  transform: translateX(4px);
 }
 
 .info-icon {
@@ -75,23 +78,23 @@
 
 .info-item h4 {
   margin: 0 0 5px 0;
-  color: #ffffff;
+  color: #f5f5f5;
   font-weight: 600;
 }
 
 .info-item p {
   margin: 0;
-  color: #b0b0b0;
+  color: #bdbdbd;
 }
 
 .info-item a {
-  color: #0080ff;
+  color: #d0d0d0;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .info-item a:hover {
-  color: #00ffff;
+  color: #ffffff;
 }
 
 /* Social Links */
@@ -103,26 +106,26 @@
 
 .social-link {
   padding: 10px 20px;
-  background: rgba(0, 0, 255, 0.1);
-  border: 2px solid rgba(0, 0, 255, 0.3);
-  color: #0080ff;
+  background: rgba(255,255,255,0.02);
+  border: 2px solid rgba(255,255,255,0.04);
+  color: #d0d0d0;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .social-link:hover {
-  background: rgba(0, 0, 255, 0.2);
-  border-color: #0080ff;
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.07);
   transform: translateY(-3px);
 }
 
 /* Contact Form */
 .contact-form {
-  background: rgba(0, 0, 255, 0.08);
+  background: rgba(255,255,255,0.02);
   padding: 40px;
-  border: 1px solid rgba(0, 0, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: 12px;
 }
 
@@ -134,13 +137,13 @@
 .contact-form textarea {
   width: 100%;
   padding: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(0, 0, 255, 0.3);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: 6px;
   color: #ffffff;
   font-size: 1rem;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   resize: vertical;
 }
 
@@ -152,9 +155,9 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  background: rgba(0, 0, 0, 0.5);
-  border-color: #0000ff;
-  box-shadow: 0 0 20px rgba(0, 0, 255, 0.3);
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 0 18px rgba(0,0,0,0.6);
 }
 
 .contact-form textarea {
@@ -165,19 +168,19 @@
 .submit-btn {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #0000ff, #0080ff);
+  background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
   color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 0, 255, 0.3);
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
 .submit-btn:hover {
-  box-shadow: 0 0 40px rgba(0, 0, 255, 0.6);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
   transform: translateY(-3px);
 }
 

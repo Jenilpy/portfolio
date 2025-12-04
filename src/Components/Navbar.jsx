@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './Navbar.css';
 
@@ -63,6 +63,46 @@ const SparkleNavbar = ({ items, color = '#00fffc' }) => {
       });
     }
   }, []);
+
+  // Keep active element positioned when activeIndex changes (e.g., scroll-spy)
+  useLayoutEffect(() => {
+    const activeButton = buttonRefs.current[activeIndex];
+    if (navRef.current && activeElementRef.current && activeButton) {
+      const x = getOffsetLeft(activeButton);
+      gsap.to(activeElementRef.current, { x, duration: 0.28, ease: 'power2.out' });
+    }
+  }, [activeIndex]);
+
+  // Scroll spy: observe sections and update activeIndex on scroll
+  useEffect(() => {
+    if (!items || items.length === 0) return;
+
+    const sectionIds = items.map((it) => it.toLowerCase());
+    const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const idx = sectionIds.indexOf(id);
+            if (idx !== -1 && idx !== activeIndex) {
+              setActiveIndex(idx);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0.01,
+      }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [items, activeIndex]);
 
   const handleClick = (index) => {
     const navElement = navRef.current;
